@@ -18,6 +18,7 @@ public class Gun : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject hitEffectPrefab;
     public AudioSource gunAudio;
+    public AudioSource gunReloadAudio;
     public Text currentAmmo_text;
     public Text maxAmmo_text;
     public GunRecoil recoil;  // reference
@@ -96,9 +97,9 @@ public class Gun : MonoBehaviour
 
     void Reload()
     {
+
         Debug.Log("Reloading");
 
-     
         int ammoRemove = magSize - currentAmmo;
 
         ammoRemove = (maxAmmo - ammoRemove) >= 0 ? ammoRemove : maxAmmo;
