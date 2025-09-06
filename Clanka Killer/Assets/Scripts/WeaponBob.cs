@@ -3,9 +3,9 @@ using UnityEngine;
 public class WeaponBob : MonoBehaviour
 {
     [Header("Bobbing Settings")]
-    public float bobSpeed = 4.5f;       // how fast it bobs (linked to movement)
-    public float bobAmount = 0.05f;     // how much it moves up/down
-    public float swayAmount = 0.03f;    // optional left/right sway
+    public float bobSpeed = 5f;       // how fast it bobs (linked to movement)
+    public float bobAmount = 0.04f;     // how much it moves up/down
+    public float swayAmount = 0.04f;    // optional left/right sway
 
     private float timer = 0f;
     private Vector3 initialPos;

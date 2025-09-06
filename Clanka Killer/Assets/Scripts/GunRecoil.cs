@@ -4,8 +4,8 @@ public class GunRecoil : MonoBehaviour
 {
     [Header("Recoil Settings")]
     public Vector3 recoilKick = new Vector3(0f, 0f, -0.2f); // how far gun moves back
-    public float recoilSpeed = 8f;   // how fast gun kicks back
-    public float returnSpeed = 6f;   // how fast it goes back to normal
+    public float recoilSpeed = 15f;   // how fast gun kicks back
+    public float returnSpeed = 8f;   // how fast it goes back to normal
 
     private Vector3 initialPosition;
     private Vector3 currentRecoil;

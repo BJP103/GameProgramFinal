@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class WeaponSwayRotation : MonoBehaviour
 {
-    public float amount = 10f;       // rotation amount
+    public float amount = 5f;       // rotation amount
     public float smooth = 6f;        // how quickly it follows
-    public float maxAmount = 15f;    // clamp
+    public float maxAmount = 8f;    // clamp
 
     private Quaternion initialRotation;
 
