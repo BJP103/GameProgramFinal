@@ -27,14 +27,25 @@ public class Gun : MonoBehaviour
     public Text currentAmmo_text;
     public Text maxAmmo_text;
     public GunRecoil recoil;  // reference
-    public CameraRecoil recoilCamera;
+                              
+    [Header("References")]
+    public Transform camTransform;  // drag in your Main Camera
+
+    [Header("Camera Recoil")]
+    public float recoilX = 2f;       // vertical kick
+    public float recoilY = 1f;       // horizontal sway
+    public float returnSpeed = 5f;   // how fast it returns
+    public float snappiness = 8f;    // how sharp the kick feels
+
+    private Vector2 currentRotation;
+    private Vector2 targetRotation;
+
 
 
     private float nextTimeToFire = 0f;
 
     void Update()
     {
-        
         currentAmmo_text.text = currentAmmo.ToString();
         maxAmmo_text.text = maxAmmo.ToString();
 
@@ -53,18 +64,34 @@ public class Gun : MonoBehaviour
             Reload();
         }
 
-        // If you want New Input System, see note below 👇
     }
+
+    void LateUpdate()
+    {
+        // Smooth recoil recovery
+        targetRotation = Vector2.Lerp(targetRotation, Vector2.zero, returnSpeed * Time.deltaTime);
+        currentRotation = Vector2.Lerp(currentRotation, targetRotation, snappiness * Time.deltaTime);
+
+        // Apply recoil last, after MouseLook already set the camera rotation
+        camTransform.localRotation *= Quaternion.Euler(-currentRotation.x, currentRotation.y, 0f);
+    }
+
 
     void Shoot()
     {
+        // Add random recoil when shooting
+        targetRotation += new Vector2(
+            recoilX,
+            UnityEngine.Random.Range(-recoilY, recoilY)
+        );
+
 
         //Subtract one from currentAmmo
         Debug.Log("Curent Ammo:" + currentAmmo);
         currentAmmo --;
 
-        if(recoilCamera != null)
-        recoilCamera.ApplyRecoil();
+        //if(recoilCamera != null)
+        //recoilCamera.ApplyRecoil();
 
         // Play muzzle flash
         if (muzzleFlash != null)
@@ -79,6 +106,7 @@ public class Gun : MonoBehaviour
 
         if (muzzleLight != null)
             StartCoroutine(MuzzleFlashLight());
+
 
 
 
@@ -102,6 +130,8 @@ public class Gun : MonoBehaviour
                 Destroy(impactGO, 2f);
             }
         }
+
+        
     }
 
     void Reload()
@@ -116,9 +146,6 @@ public class Gun : MonoBehaviour
         currentAmmo += ammoRemove;
 
         maxAmmo -= ammoRemove;
-
-     
-        
 
     }
     IEnumerator MuzzleFlashLight()
