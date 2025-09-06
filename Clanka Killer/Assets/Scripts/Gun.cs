@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     public int magSize = 30;
 
     public Light muzzleLight;   // drag in your muzzle flash light
-    public float lightDuration = 0.05f; // how long it flashes
+    public float lightDuration = 0.03f; // how long it flashes
 
 
     [Header("References")]
