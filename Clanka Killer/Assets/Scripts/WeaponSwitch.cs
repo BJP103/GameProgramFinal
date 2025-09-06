@@ -11,6 +11,11 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
+        if (transform.childCount == 1) {
+            selectedWeapon = -1;
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+
         int previousSelected = selectedWeapon;
 
         // Scroll wheel
