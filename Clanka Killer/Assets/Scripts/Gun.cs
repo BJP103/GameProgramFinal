@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using static UnityEngine.GraphicsBuffer;
 
 public class Gun : MonoBehaviour
@@ -12,6 +13,10 @@ public class Gun : MonoBehaviour
     public int currentAmmo = 30;
     public int maxAmmo = 120;
     public int magSize = 30;
+
+    public Light muzzleLight;   // drag in your muzzle flash light
+    public float lightDuration = 0.05f; // how long it flashes
+
 
     [Header("References")]
     public Camera playerCamera;
@@ -72,6 +77,10 @@ public class Gun : MonoBehaviour
         if (recoil != null)
             recoil.ApplyRecoil();
 
+        if (muzzleLight != null)
+            StartCoroutine(MuzzleFlashLight());
+
+
 
         // Raycast from camera forward
         RaycastHit hit;
@@ -112,4 +121,11 @@ public class Gun : MonoBehaviour
         
 
     }
+    IEnumerator MuzzleFlashLight()
+    {
+        muzzleLight.enabled = true;
+        yield return new WaitForSeconds(lightDuration);
+        muzzleLight.enabled = false;
+    }
+
 }
