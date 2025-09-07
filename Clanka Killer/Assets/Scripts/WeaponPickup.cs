@@ -11,6 +11,8 @@ public class WeaponPickup : MonoBehaviour
 
     public Component Gun;
 
+    public bool playerInRange = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +27,23 @@ public class WeaponPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerInRange == true && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Pick up " + gameObject.name);
 
+            weaponPickup.transform.SetParent(newpos, false);
+
+            Destroy(gameObject);
+        }
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
+        playerInRange = true;
+    }
 
-        Debug.Log("Pick up " + gameObject.name);
-
-        weaponPickup.transform.SetParent(newpos, false);
-
-        Destroy(gameObject);
+    void OnTriggerExit(Collider other)
+    {
+        playerInRange = false;
     }
 }
