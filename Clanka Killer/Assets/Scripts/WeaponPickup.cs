@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class WeaponPickup : MonoBehaviour
     public Component Gun;
     public Image interact;
     public Image ammoCounter;
+    public AudioSource openingSound;
 
     public bool playerInRange = false;
 
@@ -36,7 +38,14 @@ public class WeaponPickup : MonoBehaviour
             weaponPickup.transform.SetParent(newpos, false);
             interact.gameObject.SetActive(false);
             ammoCounter.gameObject.SetActive(true);
-            Destroy(gameObject);
+            if (openingSound != null)
+                openingSound.PlayOneShot(openingSound.clip);
+            GetComponent<BoxCollider>().enabled = false;
+
+            //Destroy(gameObject);
+            //Destroy(gameObject);
+            StartCoroutine(Despawn());
+            
 
         }
     }
@@ -51,5 +60,11 @@ public class WeaponPickup : MonoBehaviour
     {
         playerInRange = false;
         interact.gameObject.SetActive(false);
+    }
+
+    IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }

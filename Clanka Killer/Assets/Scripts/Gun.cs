@@ -24,6 +24,7 @@ public class Gun : MonoBehaviour
     public GameObject hitEffectPrefab;
     public AudioSource gunAudio;
     public AudioSource gunReloadAudio;
+    public AudioSource emptyMag;
     public Text currentAmmo_text;
     public Text maxAmmo_text;
     public GunRecoil recoil;  // reference
@@ -57,6 +58,12 @@ public class Gun : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();
             }
+
+            if (maxAmmo == 0 && currentAmmo == 0)
+            {
+                if (emptyMag != null)
+                    emptyMag.Play();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R) && maxAmmo > 0 || currentAmmo <= 0 && maxAmmo > 0)
@@ -79,6 +86,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        
+
         // Add random recoil when shooting
         targetRotation += new Vector2(
             recoilX,
