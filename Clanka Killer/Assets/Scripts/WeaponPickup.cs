@@ -1,15 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponPickup : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject weaponPickup;
-
     public GameObject spawngunpoint;
-
     public Transform newpos;
-
     public Component Gun;
+    public Image interact;
+    public Image ammoCounter;
 
     public bool playerInRange = false;
 
@@ -21,6 +21,8 @@ public class WeaponPickup : MonoBehaviour
 
         //Gun = GetComponent<gun>();
         weaponPickup.SetActive(false);
+        interact.gameObject.SetActive(false);
+        ammoCounter.gameObject.SetActive(false);
 
     }
 
@@ -32,18 +34,22 @@ public class WeaponPickup : MonoBehaviour
             Debug.Log("Pick up " + gameObject.name);
 
             weaponPickup.transform.SetParent(newpos, false);
-
+            interact.gameObject.SetActive(false);
+            ammoCounter.gameObject.SetActive(true);
             Destroy(gameObject);
+
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
         playerInRange = true;
+        interact.gameObject.SetActive (true);
     }
 
     void OnTriggerExit(Collider other)
     {
         playerInRange = false;
+        interact.gameObject.SetActive(false);
     }
 }
