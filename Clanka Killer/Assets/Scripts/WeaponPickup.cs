@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class WeaponPickup : MonoBehaviour
     public Image interact;
     public Image ammoCounter;
     public AudioSource openingSound;
+    public Text weaponName;
 
     public bool playerInRange = false;
 
@@ -25,6 +27,8 @@ public class WeaponPickup : MonoBehaviour
         weaponPickup.SetActive(false);
         interact.gameObject.SetActive(false);
         ammoCounter.gameObject.SetActive(false);
+        weaponName.gameObject.SetActive(false);
+        
 
     }
 
@@ -38,6 +42,7 @@ public class WeaponPickup : MonoBehaviour
             weaponPickup.transform.SetParent(newpos, false);
             interact.gameObject.SetActive(false);
             ammoCounter.gameObject.SetActive(true);
+            weaponName.gameObject.SetActive(true);
             if (openingSound != null)
                 openingSound.PlayOneShot(openingSound.clip);
             GetComponent<BoxCollider>().enabled = false;

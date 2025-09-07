@@ -27,6 +27,7 @@ public class Gun : MonoBehaviour
     public AudioSource emptyMag;
     public Text currentAmmo_text;
     public Text maxAmmo_text;
+    //public Text weaponName;
     public GunRecoil recoil;  // reference
                               
     [Header("References")]
@@ -49,6 +50,10 @@ public class Gun : MonoBehaviour
     {
         currentAmmo_text.text = currentAmmo.ToString();
         maxAmmo_text.text = maxAmmo.ToString();
+        
+        Text WeaponNameTXT = GameObject.Find("WeaponName").GetComponent<Text>();
+
+        WeaponNameTXT.text = gameObject.name;
 
         // Old Input System (if enabled in Project Settings > Player > Input Handling)
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
