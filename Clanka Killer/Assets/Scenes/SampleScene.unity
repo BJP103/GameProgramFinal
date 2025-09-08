@@ -7579,7 +7579,7 @@ PrefabInstance:
     - target: {fileID: 3202793201355681132, guid: 4a031b51067685a459d7f48c11288e6c, type: 3}
       propertyPath: weaponImg
       value: 
-      objectReference: {fileID: 21300000, guid: 4cb8154d66c6128449ef47047a6d3f9d, type: 3}
+      objectReference: {fileID: 21300000, guid: 836d7d12b4fce8f4082f7f9e7191910b, type: 3}
     - target: {fileID: 3202793201355681132, guid: 4a031b51067685a459d7f48c11288e6c, type: 3}
       propertyPath: WeaponImage
       value: 
@@ -8535,7 +8535,7 @@ PrefabInstance:
     - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: weaponImg
       value: 
-      objectReference: {fileID: 21300000, guid: 45485053c5e35bb45856d3a578b00800, type: 3}
+      objectReference: {fileID: 21300000, guid: d61624307d0a8194eac488b16820842b, type: 3}
     - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: WeaponImage
       value: 
@@ -8943,6 +8943,10 @@ PrefabInstance:
       propertyPath: lookXLimit
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: weaponImg
+      value: 
+      objectReference: {fileID: 681773886}
     - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       propertyPath: notSelect1
       value: 

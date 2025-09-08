@@ -69,7 +69,7 @@ public class WeaponPickup : MonoBehaviour
 
     IEnumerator Despawn()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
 }
