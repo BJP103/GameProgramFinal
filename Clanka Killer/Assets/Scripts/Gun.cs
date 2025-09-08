@@ -27,6 +27,9 @@ public class Gun : MonoBehaviour
     public AudioSource emptyMag;
     public Text currentAmmo_text;
     public Text maxAmmo_text;
+    public Sprite weaponImg;
+    public Image WeaponImage;
+
     //public Text weaponName;
     public GunRecoil recoil;  // reference
                               
@@ -46,6 +49,11 @@ public class Gun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    private void Start()
+    {
+                
+    }
+
     void Update()
     {
         currentAmmo_text.text = currentAmmo.ToString();
@@ -55,6 +63,9 @@ public class Gun : MonoBehaviour
 
         WeaponNameTXT.text = gameObject.name;
 
+        WeaponImage.sprite = weaponImg;
+
+       
         // Old Input System (if enabled in Project Settings > Player > Input Handling)
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {

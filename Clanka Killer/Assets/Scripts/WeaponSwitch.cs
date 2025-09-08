@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponSwitch : MonoBehaviour
 {
     public int selectedWeapon = 0;
+
+    public Image notSelect1;
+    public Image notSelect2;
 
     void Start()
     {
@@ -11,7 +15,60 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (transform.childCount == 1) {
+        if (transform.childCount > 1) {
+            if (transform.GetChild(0).gameObject.activeInHierarchy == false)
+            {
+                notSelect1.sprite = transform.GetChild(0).GetComponent<Gun>().weaponImg;
+
+                if (transform.childCount > 2)
+                {
+                    if (transform.GetChild(2).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(2).GetComponent<Gun>().weaponImg;
+                    }
+                    else if (transform.GetChild(1).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(1).GetComponent<Gun>().weaponImg;
+                    }
+                    else if(transform.GetChild(0).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(0).GetComponent<Gun>().weaponImg;
+                    }
+                    
+                     
+                }
+            }
+            else if (transform.GetChild(1).gameObject.activeInHierarchy == false)
+            {
+                notSelect1.sprite = transform.GetChild(1).GetComponent<Gun>().weaponImg;
+                if (transform.childCount > 2)
+                {
+                    if (transform.GetChild(2).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(2).GetComponent<Gun>().weaponImg;
+                    }
+                    else if (transform.GetChild(1).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(1).GetComponent<Gun>().weaponImg;
+                    }
+                    else if (transform.GetChild(0).gameObject.activeInHierarchy == false)
+                    {
+                        notSelect2.sprite = transform.GetChild(0).GetComponent<Gun>().weaponImg;
+                    }
+
+
+                }
+            }
+            
+            
+
+        }
+        
+            
+        
+
+        if (transform.childCount == 1)
+        {
             selectedWeapon = -1;
             transform.GetChild(0).gameObject.SetActive(true);
         }
