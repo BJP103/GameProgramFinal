@@ -25,4 +25,4 @@ The game is is semi-realistic FPS(First Person Shooter) story game. The player w
 The player main goal to progresss through the story using items found in the game. To progress through the story players must defeat enemies and bosses to complete the levels or chapters.
 
 ## Aestetics
-The game will have semi-realistic look to it. 
+The game will have semi-realistic look to it. Using real models to build the environment, weapon, items, and characters. The game will have a post apocalyptic cyberpunk look to it. The gunplay and movement will be based Destiny 2 and Halo
