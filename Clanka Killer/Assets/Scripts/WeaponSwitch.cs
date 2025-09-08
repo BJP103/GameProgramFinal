@@ -55,18 +55,9 @@ public class WeaponSwitch : MonoBehaviour
                     {
                         notSelect2.sprite = transform.GetChild(0).GetComponent<Gun>().weaponImg;
                     }
-
-
                 }
             }
-            
-            
-
         }
-        
-            
-        
-
         if (transform.childCount == 1)
         {
             selectedWeapon = -1;
