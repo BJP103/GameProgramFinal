@@ -148,6 +148,13 @@ public class Gun : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
+            // Check if hit enemy
+            EnemyDamage enemy = hit.collider.GetComponent<EnemyDamage>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(20); // apply damage
+            }
+
             // Spawn hit effect
             if (hitEffectPrefab != null)
             {
