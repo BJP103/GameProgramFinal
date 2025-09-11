@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -7,17 +8,20 @@ public class EnemyDamage : MonoBehaviour
 
     private EnemyRagdoll ragdoll; // if using ragdoll
 
+    public EnemyHealthBar healthBar;
+
     void Start()
     {
         currentHealth = maxHealth;
         ragdoll = GetComponent<EnemyRagdoll>();
+        healthBar.UpdateHealthBar(maxHealth, currentHealth);
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         Debug.Log(gameObject.name + " took " + damage + " damage. Remaining HP: " + currentHealth);
-
+        healthBar.UpdateHealthBar(maxHealth, currentHealth);
         if (currentHealth <= 0)
         {
             Die();
@@ -35,4 +39,6 @@ public class EnemyDamage : MonoBehaviour
         // Or just destroy
         // Destroy(gameObject);
     }
+
+    
 }
