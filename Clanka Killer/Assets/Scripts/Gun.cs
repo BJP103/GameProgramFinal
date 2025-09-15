@@ -29,6 +29,7 @@ public class Gun : MonoBehaviour
     public Text maxAmmo_text;
     public Sprite weaponImg;
     public Image WeaponImage;
+    public Animator weaponAnim;
 
     //public Text weaponName;
     public GunRecoil recoil;  // reference
@@ -51,7 +52,7 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
-                
+    weaponAnim.enabled = false;
     }
 
     void Update()
@@ -84,7 +85,8 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && maxAmmo > 0 || currentAmmo <= 0 && maxAmmo > 0)
         {
-            Reload();
+            weaponAnim.enabled = true;
+            StartCoroutine(Reload());
         }
 
     }
@@ -166,8 +168,15 @@ public class Gun : MonoBehaviour
         
     }
 
-    void Reload()
+    IEnumerator Reload()
     {
+        
+        weaponAnim.SetBool("IsReloading", true);
+
+        yield return new WaitForSeconds(.9f);
+
+        weaponAnim.SetBool("IsReloading" ,false);
+        weaponAnim.enabled = false;
 
         Debug.Log("Reloading");
 

@@ -1161,6 +1161,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &360481112
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360481092}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0811f449402a64d46999fc2a2a02a1e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -8551,6 +8573,7 @@ MonoBehaviour:
   maxAmmo_text: {fileID: 823332330}
   weaponImg: {fileID: 21300000, guid: 91ff3b74ab3f81543b974d06a62bb2ed, type: 3}
   WeaponImage: {fileID: 681773886}
+  weaponAnim: {fileID: 0}
   recoil: {fileID: 1277342901}
   camTransform: {fileID: 4558252902985283633}
   recoilX: 2
@@ -10986,6 +11009,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1163294528564682867, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: '::'
+      objectReference: {fileID: 0}
     - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: emptyMag
       value: 
@@ -10998,6 +11025,10 @@ PrefabInstance:
       propertyPath: weaponImg
       value: 
       objectReference: {fileID: 21300000, guid: d61624307d0a8194eac488b16820842b, type: 3}
+    - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: weaponAnim
+      value: 
+      objectReference: {fileID: 360481112}
     - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: WeaponImage
       value: 
@@ -11030,6 +11061,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3143765768524019886, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4744084255621395218, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7771320857024895603, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7996808424018983272, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 5
@@ -11047,6 +11090,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3124643124758858547, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 360481099}
+    - targetCorrespondingSourceObject: {fileID: 3124643124758858547, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 360481112}
   m_SourcePrefab: {fileID: 100100000, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
 --- !u!1 &1871618252
 GameObject:
