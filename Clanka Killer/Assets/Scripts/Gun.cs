@@ -173,7 +173,7 @@ public class Gun : MonoBehaviour
         
         weaponAnim.SetBool("IsReloading", true);
 
-        yield return new WaitForSeconds(.9f);
+        yield return new WaitForSeconds(1f);
 
         weaponAnim.SetBool("IsReloading" ,false);
         weaponAnim.enabled = false;
