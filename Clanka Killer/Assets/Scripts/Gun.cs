@@ -46,6 +46,7 @@ public class Gun : MonoBehaviour
     private Vector2 currentRotation;
     private Vector2 targetRotation;
 
+    private bool isReloading =false;
 
 
     private float nextTimeToFire = 0f;
@@ -57,6 +58,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+
         currentAmmo_text.text = currentAmmo.ToString();
         maxAmmo_text.text = maxAmmo.ToString();
         
@@ -66,7 +68,8 @@ public class Gun : MonoBehaviour
 
         WeaponImage.sprite = weaponImg;
 
-       
+        if (isReloading) return;
+
         // Old Input System (if enabled in Project Settings > Player > Input Handling)
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
@@ -170,7 +173,8 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        
+        isReloading = true;
+
         weaponAnim.SetBool("IsReloading", true);
 
         yield return new WaitForSeconds(1f);
@@ -188,6 +192,7 @@ public class Gun : MonoBehaviour
 
         maxAmmo -= ammoRemove;
 
+        isReloading = false;
     }
     IEnumerator MuzzleFlashLight()
     {

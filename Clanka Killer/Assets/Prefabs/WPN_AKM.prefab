@@ -98,7 +98,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6165074673713867875}
-  - component: {fileID: 6165074673721541505}
   - component: {fileID: 3202793201355681132}
   - component: {fileID: 319014818047322234}
   - component: {fileID: 7784248468961384026}
@@ -134,28 +133,6 @@ Transform:
   - {fileID: 4709957983834913305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6165074673721541505
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6165074673714294851}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 75dcb58506746b84db987c4ce01e99b5, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3202793201355681132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +158,12 @@ MonoBehaviour:
   hitEffectPrefab: {fileID: 0}
   gunAudio: {fileID: 319014818047322234}
   gunReloadAudio: {fileID: 0}
+  emptyMag: {fileID: 0}
   currentAmmo_text: {fileID: 0}
   maxAmmo_text: {fileID: 0}
+  weaponImg: {fileID: 0}
+  WeaponImage: {fileID: 0}
+  weaponAnim: {fileID: 0}
   recoil: {fileID: 3638522262130247859}
   camTransform: {fileID: 0}
   recoilX: 2
