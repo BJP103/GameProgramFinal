@@ -30,6 +30,7 @@ public class Gun : MonoBehaviour
     public Sprite weaponImg;
     public Image WeaponImage;
     public Animator weaponAnim;
+    public AudioSource weaponReload;
 
     //public Text weaponName;
     public GunRecoil recoil;  // reference
@@ -76,7 +77,9 @@ public class Gun : MonoBehaviour
             if (currentAmmo > 0)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
+                weaponAnim.SetBool("IsShooting", true);
                 Shoot();
+                weaponAnim.SetBool("IsShooting", false);
             }
 
             if (maxAmmo == 0 && currentAmmo == 0)
@@ -176,6 +179,8 @@ public class Gun : MonoBehaviour
         isReloading = true;
 
         weaponAnim.SetBool("IsReloading", true);
+
+        weaponReload.Play();
 
         yield return new WaitForSeconds(1f);
 
