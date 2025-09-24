@@ -91,8 +91,17 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && maxAmmo > 0 || currentAmmo <= 0 && maxAmmo > 0)
         {
-            weaponAnim.enabled = true;
-            StartCoroutine(Reload());
+            if(currentAmmo == magSize)
+            {
+                weaponAnim.enabled = false ;
+            }
+            else
+            {
+                weaponAnim.enabled = true;
+                StartCoroutine(Reload());
+            }
+
+
         }
 
     }
