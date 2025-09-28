@@ -14676,7 +14676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       propertyPath: raisedY
-      value: 10
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       propertyPath: animator
