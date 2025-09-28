@@ -12,7 +12,7 @@ public class WeaponSwitch : MonoBehaviour
     void Start()
     {
         SelectWeapon();
-        if(transform.childCount == 0)
+        if (transform.childCount == 0)
         {
             weaponImg.gameObject.SetActive(false);
             notSelect1.gameObject.SetActive(false);
@@ -22,7 +22,8 @@ public class WeaponSwitch : MonoBehaviour
 
     void Update()
     {
-        if (transform.childCount > 1) {
+        if (transform.childCount > 1)
+        {
             notSelect1.gameObject.SetActive(true);
 
             if (transform.GetChild(0).gameObject.activeInHierarchy == false)
@@ -41,11 +42,11 @@ public class WeaponSwitch : MonoBehaviour
                     {
                         notSelect2.sprite = transform.GetChild(1).GetComponent<Gun>().weaponImg;
                     }
-                    else if(transform.GetChild(0).gameObject.activeInHierarchy == false)
+                    else if (transform.GetChild(0).gameObject.activeInHierarchy == false)
                     {
                         notSelect2.sprite = transform.GetChild(0).GetComponent<Gun>().weaponImg;
                     }
-                     
+
                 }
             }
             else if (transform.GetChild(1).gameObject.activeInHierarchy == false)
@@ -69,7 +70,8 @@ public class WeaponSwitch : MonoBehaviour
                     }
                 }
             }
-        } else if(transform.childCount == 1)
+        }
+        else if (transform.childCount == 1)
         {
             weaponImg.gameObject.SetActive(true);
         }

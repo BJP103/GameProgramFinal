@@ -14675,6 +14675,18 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: raisedY
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 360481112}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: loweredY
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       propertyPath: weaponImg
       value: 
       objectReference: {fileID: 681773886}
@@ -14686,6 +14698,14 @@ PrefabInstance:
       propertyPath: notSelect2
       value: 
       objectReference: {fileID: 1789862908}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: switchSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773641373473062320, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      propertyPath: weaponHolder
+      value: 
+      objectReference: {fileID: 4210479284545589877}
     - target: {fileID: 7129346749450858750, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       propertyPath: m_IsActive
       value: 0

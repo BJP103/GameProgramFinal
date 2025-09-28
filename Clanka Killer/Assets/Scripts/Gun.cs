@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
 
     //public Text weaponName;
     public GunRecoil recoil;  // reference
-                              
+
     [Header("References")]
     public Transform camTransform;  // drag in your Main Camera
 
@@ -47,14 +47,14 @@ public class Gun : MonoBehaviour
     private Vector2 currentRotation;
     private Vector2 targetRotation;
 
-    private bool isReloading =false;
+    private bool isReloading = false;
 
 
     private float nextTimeToFire = 0f;
 
     private void Start()
     {
-    weaponAnim.enabled = false;
+        weaponAnim.enabled = false;
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class Gun : MonoBehaviour
 
         currentAmmo_text.text = currentAmmo.ToString();
         maxAmmo_text.text = maxAmmo.ToString();
-        
+
         Text WeaponNameTXT = GameObject.Find("WeaponName").GetComponent<Text>();
 
         WeaponNameTXT.text = gameObject.name;
@@ -77,9 +77,9 @@ public class Gun : MonoBehaviour
             if (currentAmmo > 0)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
-                weaponAnim.SetBool("IsShooting", true);
+                //weaponAnim.SetBool("IsShooting", true);
                 Shoot();
-                weaponAnim.SetBool("IsShooting", false);
+                //weaponAnim.SetBool("IsShooting", false);
             }
 
             if (maxAmmo == 0 && currentAmmo == 0)
@@ -91,9 +91,9 @@ public class Gun : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && maxAmmo > 0 || currentAmmo <= 0 && maxAmmo > 0)
         {
-            if(currentAmmo == magSize)
+            if (currentAmmo == magSize)
             {
-                weaponAnim.enabled = false ;
+                weaponAnim.enabled = false;
             }
             else
             {
@@ -119,7 +119,7 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        
+
 
         // Add random recoil when shooting
         targetRotation += new Vector2(
@@ -130,7 +130,7 @@ public class Gun : MonoBehaviour
 
         //Subtract one from currentAmmo
         Debug.Log("Curent Ammo:" + currentAmmo);
-        currentAmmo --;
+        currentAmmo--;
 
         //if(recoilCamera != null)
         //recoilCamera.ApplyRecoil();
@@ -180,7 +180,7 @@ public class Gun : MonoBehaviour
             }
         }
 
-        
+
     }
 
     IEnumerator Reload()
@@ -193,7 +193,7 @@ public class Gun : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        weaponAnim.SetBool("IsReloading" ,false);
+        weaponAnim.SetBool("IsReloading", false);
         weaponAnim.enabled = false;
 
         Debug.Log("Reloading");
