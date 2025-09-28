@@ -9,12 +9,14 @@ public class EnemyDamage : MonoBehaviour
     private EnemyRagdoll ragdoll; // if using ragdoll
 
     public EnemyHealthBar healthBar;
+    GameObject player;
 
     void Start()
     {
         currentHealth = maxHealth;
         ragdoll = GetComponent<EnemyRagdoll>();
         healthBar.UpdateHealthBar(maxHealth, currentHealth);
+        player = GameObject.Find("Player");
     }
 
     public void TakeDamage(int damage)
@@ -39,6 +41,16 @@ public class EnemyDamage : MonoBehaviour
         // Or just destroy
         // Destroy(gameObject);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Touching" + other.gameObject.name);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(10);
+        }
+    }
 
-    
+
+
+
 }
