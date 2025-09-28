@@ -8,6 +8,10 @@ public class WeaponSwitch : MonoBehaviour
     public Image weaponImg;
     public Image notSelect1;
     public Image notSelect2;
+    public AudioSource weaponSwitchAuido;
+    private bool switchSound = false;
+    private GameObject crossHair;
+
 
     void Start()
     {
@@ -17,6 +21,9 @@ public class WeaponSwitch : MonoBehaviour
             weaponImg.gameObject.SetActive(false);
             notSelect1.gameObject.SetActive(false);
             notSelect2.gameObject.SetActive(false);
+            crossHair = GameObject.Find("CrossHairGroup");
+            crossHair.SetActive(false);
+
         }
     }
 
@@ -24,6 +31,7 @@ public class WeaponSwitch : MonoBehaviour
     {
         if (transform.childCount > 1)
         {
+            crossHair.SetActive(true);
             notSelect1.gameObject.SetActive(true);
 
             if (transform.GetChild(0).gameObject.activeInHierarchy == false)
@@ -73,13 +81,15 @@ public class WeaponSwitch : MonoBehaviour
         }
         else if (transform.childCount == 1)
         {
+            crossHair.SetActive(true);
             weaponImg.gameObject.SetActive(true);
-        }
-
-        if (transform.childCount == 1)
-        {
             selectedWeapon = -1;
             transform.GetChild(0).gameObject.SetActive(true);
+            if (!switchSound)
+            {
+                weaponSwitchAuido.PlayOneShot(weaponSwitchAuido.clip);
+                switchSound = true;
+            }
         }
 
         int previousSelected = selectedWeapon;
@@ -87,15 +97,21 @@ public class WeaponSwitch : MonoBehaviour
         // Scroll wheel
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
+            if(transform.childCount > 1 )
+                weaponSwitchAuido.PlayOneShot(weaponSwitchAuido.clip);
             selectedWeapon++;
             if (selectedWeapon >= transform.childCount)
                 selectedWeapon = 0;
+                
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
+            if (transform.childCount > 1)
+                weaponSwitchAuido.PlayOneShot(weaponSwitchAuido.clip);
             selectedWeapon--;
             if (selectedWeapon < 0)
                 selectedWeapon = transform.childCount - 1;
+                
         }
 
         // Number keys (1, 2, 3...)
