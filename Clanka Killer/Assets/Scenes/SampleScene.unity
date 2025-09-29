@@ -15429,7 +15429,7 @@ MonoBehaviour:
   lightDuration: 0.03
   playerCamera: {fileID: 4558252902985283630}
   muzzleFlash: {fileID: 1668740915}
-  hitEffectPrefab: {fileID: 0}
+  hitEffectPrefab: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   gunAudio: {fileID: 1277342899}
   gunReloadAudio: {fileID: 0}
   emptyMag: {fileID: 1277342904}
@@ -17067,6 +17067,10 @@ PrefabInstance:
       propertyPath: notSelectedImg
       value: 
       objectReference: {fileID: 21300000, guid: 4cb8154d66c6128449ef47047a6d3f9d, type: 3}
+    - target: {fileID: 3202793201355681132, guid: 4a031b51067685a459d7f48c11288e6c, type: 3}
+      propertyPath: hitEffectPrefab
+      value: 
+      objectReference: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
     - target: {fileID: 3202793201355681132, guid: 4a031b51067685a459d7f48c11288e6c, type: 3}
       propertyPath: currentAmmo_text
       value: 
@@ -20305,6 +20309,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 45485053c5e35bb45856d3a578b00800, type: 3}
     - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
+      propertyPath: hitEffectPrefab
+      value: 
+      objectReference: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
+    - target: {fileID: 2177628842357746370, guid: 3929f5973c9f44643bfa657b94203d9e, type: 3}
       propertyPath: currentAmmo_text
       value: 
       objectReference: {fileID: 1484609583}
@@ -21279,6 +21287,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2063338729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063338715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284adf1f83ae6ff40afadf916efe6159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2071538194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8817898888258712963, guid: 562ca37857ef08741b961ceda6183ee3, type: 3}
@@ -21990,6 +22010,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3858455469465139024, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063338725}
+    - targetCorrespondingSourceObject: {fileID: 3858455469465139024, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2063338729}
     - targetCorrespondingSourceObject: {fileID: 7686031702406734308, guid: 02a734d48e2db5646999b60411d69a1e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7116161125387822996}

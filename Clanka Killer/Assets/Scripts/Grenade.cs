@@ -16,27 +16,43 @@ public class Grenade : MonoBehaviour
 
     private bool exploded = false;
 
+    public AudioClip explosionSound;
+    AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void StartFuse()
     {
         // start fuse coroutine
         StartCoroutine(FuseAndExplode());
+        
     }
 
     IEnumerator FuseAndExplode()
     {
         yield return new WaitForSeconds(fuseTime);
         Explode();
+        
     }
 
     public void Explode()
     {
+       
         if (exploded) return;
         exploded = true;
-
         // Spawn explosion VFX
         if (explosionPrefab != null)
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+        }
+
+        if (explosionSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
         }
 
         // Damage and force
@@ -63,8 +79,10 @@ public class Grenade : MonoBehaviour
             }
         }
 
+        
+
         // Optionally remove grenade model (hide) before destroying to avoid collisions
-        Destroy(gameObject);
+        Destroy(gameObject, explosionSound.length);
     }
 
     // Optional: immediate explosion on collision
