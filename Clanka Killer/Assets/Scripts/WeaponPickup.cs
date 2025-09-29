@@ -57,14 +57,20 @@ public class WeaponPickup : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        playerInRange = true;
-        interact.gameObject.SetActive (true);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInRange = true;
+            interact.gameObject.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        playerInRange = false;
-        interact.gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInRange = false;
+            interact.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator Despawn()

@@ -49,8 +49,4 @@ public class EnemyDamage : MonoBehaviour
             player.GetComponent<PlayerHealth>().TakeDamage(10);
         }
     }
-
-
-
-
 }
