@@ -170,6 +170,7 @@ public class Gun : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(20); // apply damage
+                
             }
 
             // Spawn hit effect
