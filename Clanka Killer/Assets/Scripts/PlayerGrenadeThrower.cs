@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerGrenadeThrower : MonoBehaviour
 {
@@ -16,8 +17,23 @@ public class PlayerGrenadeThrower : MonoBehaviour
     private float chargeStartTime;
     private bool charging = false;
 
+   public Text grenadeText;
+   public Image grenadeImg;
+
     void Update()
     {
+        grenadeText.text = grenadeCount.ToString();
+        if (grenadeCount == 0)
+        {
+            grenadeText.gameObject.SetActive(false);
+            grenadeImg.gameObject.SetActive(false);
+        }
+        else
+        {
+            grenadeText.gameObject.SetActive(true); 
+            grenadeImg.gameObject.SetActive(true);
+        }
+
         // Press and hold G to start charge, release to throw
         if (Input.GetKeyDown(KeyCode.G) && grenadeCount > 0)
         {
@@ -38,6 +54,7 @@ public class PlayerGrenadeThrower : MonoBehaviour
 
     void ThrowGrenade(float chargeNormalized)
     {
+
         if (grenadeCount <= 0) return;
 
         grenadeCount--;
