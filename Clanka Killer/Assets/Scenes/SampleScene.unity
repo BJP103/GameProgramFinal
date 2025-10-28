@@ -37959,8 +37959,20 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.26462
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -37968,7 +37980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.477243
+      value: 20.69
       objectReference: {fileID: 0}
     - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37998,9 +38010,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2765056298425639996, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3248402243328523910, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_Name
-      value: Robot (12)
+      value: Big Robot (12)
       objectReference: {fileID: 0}
     - target: {fileID: 3248402243328523910, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_Layer
@@ -38030,6 +38046,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 730216400}
+    - target: {fileID: 3659453778104629748, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3659453778104629748, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: _healthbarSprite
       value: 
@@ -38137,6 +38157,10 @@ PrefabInstance:
     - target: {fileID: 7064722234162605727, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7214659505752543346, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
+      propertyPath: m_Speed
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7310629327228557451, guid: ce8c72276fbb52b4399394e81bbf1a3a, type: 3}
       propertyPath: m_Layer
