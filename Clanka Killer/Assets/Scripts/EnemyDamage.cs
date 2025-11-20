@@ -10,6 +10,7 @@ public class EnemyDamage : MonoBehaviour
 
     public EnemyHealthBar healthBar;
     GameObject player;
+    EnemyShooter enemyShooter;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
         ragdoll = GetComponent<EnemyRagdoll>();
         healthBar.UpdateHealthBar(maxHealth, currentHealth);
         player = GameObject.Find("Player");
+        enemyShooter = GetComponent<EnemyShooter>();
     }
 
     public void TakeDamage(int damage)
@@ -27,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            
         }
     }
 
@@ -37,6 +40,9 @@ public class EnemyDamage : MonoBehaviour
         // Trigger ragdoll if available
         if (ragdoll != null)
             ragdoll.Die();
+        
+        if(enemyShooter != null)
+            enemyShooter.enabled = false;
 
         // Or just destroy
         // Destroy(gameObject);

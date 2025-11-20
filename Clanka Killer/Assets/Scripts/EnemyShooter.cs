@@ -4,144 +4,106 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class EnemyShooter : MonoBehaviour
 {
-    [Header("Targets & Prefabs")]
-    public Transform player;                 // If null, will auto-find tag "Player"
-    public GameObject bulletPrefab;
+    [Header("References")]
+    public Transform player;
+    public Transform modelToRotate;
     public Transform firePoint;
+    public GameObject bulletPrefab;
 
-    [Header("Shooting")]
-    public float shootRange = 20f;
-    public float fireRate = 1f;              // shots per second
-    public int damage = 10;
+    [Header("Audio")]
+    public AudioSource shootAudioSource;
+    public AudioClip shootSound;
 
-    [Header("Movement / Rotation")]
-    public float turnSpeed = 8f;             // how fast to rotate to face the player
-    public Transform modelToRotate;          // if null, rotates the root transform
-
-    [Header("Debug")]
-    public bool debugLogs = true;
-    public Color gizmoColor = Color.red;
+    [Header("Settings")]
+    public float shootRange = 15f;
+    public float fireRate = 1f;
+    public float turnSpeed = 8f;
+    public Vector3 rotationOffset;
 
     private NavMeshAgent agent;
-    private float nextFireTime = 0f;
     private Animator animator;
+    private float nextShotTime = 0f;
 
     void Start()
     {
-        // Auto-assign player if not set
         if (player == null)
         {
-            var playerGO = GameObject.FindGameObjectWithTag("Player");
-            if (playerGO != null) player = playerGO.transform;
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null) player = p.transform;
         }
 
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
-        // important: let agent move but not update rotation
-        agent.updatePosition = true;
         agent.updateRotation = false;
 
-        if (animator != null)
-            animator.applyRootMotion = false; // so animator doesn't hijack rotation
-
         if (modelToRotate == null)
-            modelToRotate = this.transform; // rotate root by default
+            modelToRotate = transform;
 
-        if (debugLogs) Debug.Log($"[EnemyShooterFixed] Start. Player: {(player ? player.name : "null")}");
+        if (shootAudioSource == null)
+            shootAudioSource = GetComponent<AudioSource>();
+
+        if (animator != null)
+            animator.applyRootMotion = false;
     }
 
     void Update()
     {
-        if (player == null)
-        {
-            if (debugLogs) Debug.LogWarning("[EnemyShooterFixed] Player transform missing!");
-            return;
-        }
+        if (player == null) return;
 
-        // If agent not on navmesh, try to sample nearest navmesh point once
-        if (!agent.isOnNavMesh)
-        {
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(transform.position, out hit, 2f, NavMesh.AllAreas))
-            {
-                transform.position = hit.position;
-                if (debugLogs) Debug.Log("[EnemyShooterFixed] Snapped enemy to NavMesh.");
-            }
-            else
-            {
-                if (debugLogs) Debug.LogWarning("[EnemyShooterFixed] Agent is not on NavMesh and SamplePosition failed.");
-                return;
-            }
-        }
+        float dist = Vector3.Distance(transform.position, player.position);
 
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= shootRange)
+        if (dist <= shootRange)
         {
-            // stop moving and face player
             agent.isStopped = true;
+            RotateTowardPlayer();
 
-            // rotate will be applied in LateUpdate() to ensure it happens after agents update
-            // shoot
-            if (Time.time >= nextFireTime)
+            if (Time.time >= nextShotTime)
             {
-                nextFireTime = Time.time + 1f / fireRate;
                 Shoot();
+                nextShotTime = Time.time + (1f / fireRate);
             }
         }
         else
         {
-            // chase player
-            if (!agent.isOnNavMesh) return;
             agent.isStopped = false;
-            agent.SetDestination(player.position);
+            if (agent.isOnNavMesh)
+                agent.SetDestination(player.position);
         }
     }
 
-    void LateUpdate()
+    void RotateTowardPlayer()
     {
-        // Apply rotation after NavMeshAgent moved to prevent it being overridden
-        if (player == null) return;
-
-        Vector3 dir = (player.position - transform.position);
+        Vector3 dir = player.position - transform.position;
         dir.y = 0;
 
-        if (dir.sqrMagnitude > 0.01f)
-        {
-            Quaternion targetRot = Quaternion.LookRotation(dir);
+        if (dir.sqrMagnitude < 0.001f) return;
 
-            // rotate ONLY the model, not the root
-            modelToRotate.rotation = Quaternion.Slerp(
-                modelToRotate.rotation,
-                targetRot,
-                Time.deltaTime * turnSpeed
-            );
-        }
+        Quaternion targetRot = Quaternion.LookRotation(dir);
+        Quaternion finalRot = targetRot * Quaternion.Euler(rotationOffset);
+
+        modelToRotate.rotation = Quaternion.Slerp(
+            modelToRotate.rotation,
+            finalRot,
+            Time.deltaTime * turnSpeed
+        );
     }
 
     void Shoot()
     {
-        if (debugLogs) Debug.Log($"[EnemyShooterFixed] Shooting at player. Distance: {Vector3.Distance(transform.position, player.position):F2}");
+        if (animator != null)
+            animator.SetTrigger("Shoot");
 
-        //if (animator != null)
-            //animator.SetTrigger("Shoot");
+        if (shootSound != null && shootAudioSource != null)
+            shootAudioSource.PlayOneShot(shootSound);
 
         if (bulletPrefab != null && firePoint != null)
-        {
-            GameObject b = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            // If bullet uses script and velocity, it will handle hit/damage
-        }
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
-        Gizmos.color = gizmoColor;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootRange);
-        if (player != null)
-        {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position + Vector3.up * 1.5f, player.position + Vector3.up * 1.5f);
-        }
     }
 }
