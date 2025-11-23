@@ -63,6 +63,10 @@ public class EnemyShooter : MonoBehaviour
 
     void Update()
     {
+        if (firePoint != null)
+        {
+            Debug.DrawRay(firePoint.position, firePoint.forward * 0.3f, Color.red);
+        }
         if (player == null) return;
 
         float dist = Vector3.Distance(transform.position, player.position);
@@ -112,11 +116,12 @@ public class EnemyShooter : MonoBehaviour
             return;
 
         GameObject flash = Instantiate(
-            muzzleFlashPrefab,
-            firePoint.position,
-            firePoint.rotation,
-            firePoint
-        );
+        muzzleFlashPrefab,
+        firePoint.position,
+        firePoint.rotation * Quaternion.Euler(0, 0, 90f), // adjust if needed
+        firePoint
+       );
+
 
         Destroy(flash, muzzleFlashDuration);
     }
