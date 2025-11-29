@@ -24,10 +24,12 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        Debug.Log("Button Clicked");
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        Time.timeScale = 1f;
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
