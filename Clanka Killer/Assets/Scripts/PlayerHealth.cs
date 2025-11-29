@@ -20,9 +20,15 @@ public class PlayerHealth : MonoBehaviour
 
     GameObject damageScreen;
     public AudioSource heartBeat;
+
+    public GameManager gameManager;
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         damageScreen = GameObject.Find("DamageScreen");
+        
         damageScreen.SetActive(false);
         heartBeat.enabled = false;
         currentHealth = maxHealth;
@@ -68,7 +74,12 @@ public class PlayerHealth : MonoBehaviour
             }
         }
         if (currentHealth <= 0)
+        {
+            gameManager.PlayerDied();
+            //Debug.Log("Player Died!");
             Die();
+        }
+            
     }
 
     public void Heal(int amount)
@@ -103,6 +114,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        
         Debug.Log("Player Died!");
+
     }
 }
