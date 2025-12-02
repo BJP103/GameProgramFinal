@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     GameObject damageScreen;
     public AudioSource heartBeat;
+    public AudioSource hitSound;
 
     public GameManager gameManager;
     void Start()
@@ -58,6 +59,8 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        hitSound.Play();
 
         lastDamageTime = Time.time; // reset regen timer
         Debug.Log("Took damage. Current HP = " + currentHealth);
