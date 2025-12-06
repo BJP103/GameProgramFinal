@@ -486,6 +486,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 768702186}
     - target: {fileID: 8236022487340920769, guid: 53441c0866ed382459d7a65f0a07a061, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 1769892499}
+    - target: {fileID: 8236022487340920769, guid: 53441c0866ed382459d7a65f0a07a061, type: 3}
       propertyPath: maxAmmo_text
       value: 
       objectReference: {fileID: 229232090}
@@ -561,7 +565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109599022023715519, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43.60938
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1109599022023715519, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_LocalRotation.w
@@ -581,11 +585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1109599022023715519, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 42.85407
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1109599022023715519, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1109599022023715519, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -599,6 +603,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3496533558230748414, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5322535339840825241, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -606,6 +614,10 @@ PrefabInstance:
     - target: {fileID: 5322535339840825241, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531959698585618212, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6874760855697129511, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -626,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 9027064334716512916, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
       propertyPath: m_Name
       value: Pause Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027064334716512916, guid: 91c584b22e0538048b54881a4765bbea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1025,6 +1041,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8736120239273781092, guid: dc3cf17b769e0c54da68d767cf9bb43d, type: 3}
   m_PrefabInstance: {fileID: 1769892495}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1769892499 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5289950513143481124, guid: dc3cf17b769e0c54da68d767cf9bb43d, type: 3}
+  m_PrefabInstance: {fileID: 1769892495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1855467396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1097,6 +1118,10 @@ PrefabInstance:
       propertyPath: WeaponImage
       value: 
       objectReference: {fileID: 1345584625}
+    - target: {fileID: 4561384964374080725, guid: b9d37a3e3e611314dbb5092c00ca23e7, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 1769892499}
     - target: {fileID: 4561384964374080725, guid: b9d37a3e3e611314dbb5092c00ca23e7, type: 3}
       propertyPath: maxAmmo_text
       value: 
@@ -1174,6 +1199,10 @@ PrefabInstance:
       propertyPath: WeaponImage
       value: 
       objectReference: {fileID: 1345584625}
+    - target: {fileID: 4307248732107937456, guid: f2dd1ab6d1aef6c4b9e8498d88ee4eb2, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 1769892499}
     - target: {fileID: 4307248732107937456, guid: f2dd1ab6d1aef6c4b9e8498d88ee4eb2, type: 3}
       propertyPath: maxAmmo_text
       value: 

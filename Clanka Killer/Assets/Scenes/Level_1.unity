@@ -28116,6 +28116,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 301475609}
     - target: {fileID: 4561384964374080725, guid: b9d37a3e3e611314dbb5092c00ca23e7, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 518894248}
+    - target: {fileID: 4561384964374080725, guid: b9d37a3e3e611314dbb5092c00ca23e7, type: 3}
       propertyPath: maxAmmo_text
       value: 
       objectReference: {fileID: 1833901569}
@@ -47408,6 +47412,10 @@ PrefabInstance:
       propertyPath: WeaponImage
       value: 
       objectReference: {fileID: 301475609}
+    - target: {fileID: 4307248732107937456, guid: f2dd1ab6d1aef6c4b9e8498d88ee4eb2, type: 3}
+      propertyPath: camTransform
+      value: 
+      objectReference: {fileID: 518894248}
     - target: {fileID: 4307248732107937456, guid: f2dd1ab6d1aef6c4b9e8498d88ee4eb2, type: 3}
       propertyPath: maxAmmo_text
       value: 
