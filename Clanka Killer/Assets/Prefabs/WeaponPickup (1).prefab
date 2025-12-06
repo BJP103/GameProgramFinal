@@ -275,7 +275,7 @@ Light:
   m_Enabled: 0
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 0.8666667, b: 0.6, a: 1}
+  m_Color: {r: 0, g: 0.88711464, b: 0.990566, a: 1}
   m_Intensity: 3
   m_Range: 3
   m_SpotAngle: 30
@@ -618,8 +618,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 0.92156863, b: 0.5686275, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.92156863, b: 0.5686275, a: 1}
-        key1: {r: 1, g: 0, b: 0.08972883, a: 1}
+        key0: {r: 0.049928807, g: 0.83190715, b: 0.9622642, a: 1}
+        key1: {r: 0, g: 0.53904295, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5416,15 +5416,15 @@ MonoBehaviour:
   range: 100
   fireRate: 5
   currentAmmo: 15
-  maxAmmo: 60
-  magSize: 15
+  maxAmmo: 90
+  magSize: 30
   muzzleLight: {fileID: 8002725678465747640}
   lightDuration: 0.03
   playerCamera: {fileID: 0}
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 5192384697780824291}
   hitEffectPrefab: {fileID: 100002, guid: 00fedc70b62a31e448e8ccc298257b56, type: 3}
   gunAudio: {fileID: 1546899889300086348}
-  gunReloadAudio: {fileID: 0}
+  gunReloadAudio: {fileID: 3068997796218940441}
   emptyMag: {fileID: 5374728301647504372}
   currentAmmo_text: {fileID: 0}
   maxAmmo_text: {fileID: 0}
