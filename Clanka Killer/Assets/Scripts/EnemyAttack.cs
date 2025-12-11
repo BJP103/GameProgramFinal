@@ -13,9 +13,11 @@ public class EnemyAttack : MonoBehaviour
     private PlayerHealth playerHealth;     // Reference to player health script
     private NavMeshAgent agent;
     private Animator animator;             // Optional (for attack animations)
+    private EnemyDamage enemyDamage; // enemy health
 
     void Start()
     {
+        enemyDamage = GetComponent<EnemyDamage>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         agent = GetComponent<NavMeshAgent>();
@@ -31,7 +33,8 @@ public class EnemyAttack : MonoBehaviour
         if (distance <= attackRange)
         {
             // Stop moving to attack
-            agent.isStopped = true;
+            if(enemyDamage.currentHealth > 0)
+                agent.isStopped = true;
 
             // Face the player
             Vector3 lookDir = (player.position - transform.position);
@@ -42,13 +45,16 @@ public class EnemyAttack : MonoBehaviour
             if (Time.time >= nextAttackTime)
             {
                 nextAttackTime = Time.time + 1f / attackRate;
-                Attack();
+                if(enemyDamage.currentHealth > 0)
+                    Attack();
             }
         }
         else
         {
-            // Resume movement
-            agent.isStopped = false;
+            
+            if(enemyDamage.currentHealth > 0)
+                agent.isStopped = false;
+                // Resume movement
         }
     }
 
@@ -64,6 +70,7 @@ public class EnemyAttack : MonoBehaviour
 
     void DealDamage()
     {
+
         if (playerHealth != null)
             playerHealth.TakeDamage(attackDamage);
     }
