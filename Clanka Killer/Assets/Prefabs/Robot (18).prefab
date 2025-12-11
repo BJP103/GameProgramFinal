@@ -1585,6 +1585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 0}
+  detectionRange: 50
+  stopRange: 60
 --- !u!95 &536923846473014520
 Animator:
   serializedVersion: 7
