@@ -26,3 +26,22 @@ The player main goal to progresss through the story using items found in the gam
 
 ## Aesthetics
 The game will have semi-realistic look to it. Using real models to build the environment, weapon, items, and characters. The game will have a post apocalyptic cyberpunk look to it. The gunplay and movement will be based Destiny 2 and Halo.
+
+## How to play
+Use the WASD key to move around. 
+Shifts + WASD to sprint in that direction
+E key to interact with weapon crates and ammo boxes
+Mouse 1 or Left click to shoot the weapon
+Scroll Wheel or number 1, 2, 3 key to swap weapons.
+R to reload
+
+## Reflection
+
+What I learned in making my game is to manage my time, and try not add to many things. I implemented a lot of small things like audio, vfx, lighting, assets, and building the terrain . This used a lot of my time just searching to make my scene look better. I underestimated what do I need to make a good looking fps game. I had too much I wanted to add, so I had to cut back on the things I wanted in my game.
+
+## Screenshots
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 223954" src="https://github.com/user-attachments/assets/cb622664-847a-4835-b58e-152178e55748" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224010" src="https://github.com/user-attachments/assets/f92324f2-8845-4f93-80e9-320940596468" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224057" src="https://github.com/user-attachments/assets/f90638a4-2ce3-4114-ad9d-c6d563e94dd0" />
+<img width="2557" height="1438" alt="Screenshot 2025-12-11 224217" src="https://github.com/user-attachments/assets/6354078b-ed45-4d27-b497-8ea5dadfd645" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224231" src="https://github.com/user-attachments/assets/c408845a-59e8-4aaa-b9e5-ad2f7d3fc999" />
