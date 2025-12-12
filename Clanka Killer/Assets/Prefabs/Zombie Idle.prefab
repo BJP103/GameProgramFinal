@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -48.901493
+      value: 33.782234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalPosition.y
@@ -297,11 +297,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50.046047
+      value: 70.05318
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7640427
+      value: 0.9989078
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalRotation.x
@@ -309,7 +309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6451658
+      value: -0.04672454
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalRotation.z
@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -80.356
+      value: -5.356
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92bc2c973d20efe4c99944d5c6d86846, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -753,6 +753,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowNavMesh
   player: {fileID: 0}
+  detectionRange: 25
+  stopRange: 30
 --- !u!114 &6134233027782166186
 MonoBehaviour:
   m_ObjectHideFlags: 0

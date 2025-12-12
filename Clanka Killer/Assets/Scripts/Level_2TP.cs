@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Level_2TP : MonoBehaviour
 {
+    public string sceneName;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +19,7 @@ public class Level_2TP : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")){
-            SceneManager.LoadScene("Level_2");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
