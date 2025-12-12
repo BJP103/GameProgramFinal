@@ -37,7 +37,7 @@ R to reload
 
 ## Reflection
 
-What I learned in making my game is that amount things that I needed for my game. I needed implement a lot of small things like audio, vfx, lighting, and assets. This used a lot of my time just searching to make my scene look better. I underestermated what do I need to make a fps game. I had too much I want to add, so I had to cut back on the things I wanted in my game.
+What I learned in making my game is to manage my time, and try not add to many things. I implemented a lot of small things like audio, vfx, lighting, assets, and building the terrain . This used a lot of my time just searching to make my scene look better. I underestimated what do I need to make a good looking fps game. I had too much I wanted to add, so I had to cut back on the things I wanted in my game.
 
 ## Screenshots
 <img width="2559" height="1439" alt="Screenshot 2025-12-11 223954" src="https://github.com/user-attachments/assets/cb622664-847a-4835-b58e-152178e55748" />
