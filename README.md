@@ -26,3 +26,13 @@ The player main goal to progresss through the story using items found in the gam
 
 ## Aesthetics
 The game will have semi-realistic look to it. Using real models to build the environment, weapon, items, and characters. The game will have a post apocalyptic cyberpunk look to it. The gunplay and movement will be based Destiny 2 and Halo.
+
+## How to play
+Use the WASD key to move around. 
+Shifts + WASD to sprint in that direction
+E key to interact with weapon crates and ammo boxes
+Mouse 1 or Left click to shoot the weapon
+Scroll Wheel or number 1, 2, 3 key to swap weapons.
+R to reload
+
+## Screenshots
