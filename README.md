@@ -35,6 +35,10 @@ Mouse 1 or Left click to shoot the weapon
 Scroll Wheel or number 1, 2, 3 key to swap weapons.
 R to reload
 
+## Reflection
+
+What I learned in making my game is that amount things that I needed for my game. I needed implement a lot of small things like audio, vfx, lighting, and assets. This used a lot of my time just searching to make my scene look better. I underestermated what do I need to make a fps game. I had too much I want to add, so I had to cut back on the things I wanted in my game.
+
 ## Screenshots
 <img width="2559" height="1439" alt="Screenshot 2025-12-11 223954" src="https://github.com/user-attachments/assets/cb622664-847a-4835-b58e-152178e55748" />
 <img width="2559" height="1439" alt="Screenshot 2025-12-11 224010" src="https://github.com/user-attachments/assets/f92324f2-8845-4f93-80e9-320940596468" />
