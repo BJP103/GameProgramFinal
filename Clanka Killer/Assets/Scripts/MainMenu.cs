@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    void Update()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;    
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Level_1"); // replace with your scene name
