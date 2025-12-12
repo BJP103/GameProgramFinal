@@ -36,4 +36,8 @@ Scroll Wheel or number 1, 2, 3 key to swap weapons.
 R to reload
 
 ## Screenshots
-![Uploading Screenshot 2025-12-11 223954.png…]()
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 223954" src="https://github.com/user-attachments/assets/cb622664-847a-4835-b58e-152178e55748" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224010" src="https://github.com/user-attachments/assets/f92324f2-8845-4f93-80e9-320940596468" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224057" src="https://github.com/user-attachments/assets/f90638a4-2ce3-4114-ad9d-c6d563e94dd0" />
+<img width="2557" height="1438" alt="Screenshot 2025-12-11 224217" src="https://github.com/user-attachments/assets/6354078b-ed45-4d27-b497-8ea5dadfd645" />
+<img width="2559" height="1439" alt="Screenshot 2025-12-11 224231" src="https://github.com/user-attachments/assets/c408845a-59e8-4aaa-b9e5-ad2f7d3fc999" />
